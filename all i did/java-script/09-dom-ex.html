@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dom exercises</title>
+	<style>
+		.js-control-button{
+			width: 50px;
+			height: 30px;
+			border-radius: 25px;
+			color: yellow;
+			background-color: black;
+			border: none;
+		}
+		.js-button-after{
+			color: black;
+			background-color: yellow;
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+
+	<button onclick="
+			showElement();
+		">9a</button>
+
+	<button class="js-control-button" onclick="
+		changeText();
+		">
+		9b
+	</button>
+
+	<br><br><br><br>
+
+	<input type="text" placeholder="Enter your name dude" class="input-box-js" onkeydown="
+		onClickEnter();
+	">
+
+	<button onclick="
+		representName();
+	">Submit</button>
+
+	<p class="name-para-js"></p>
+	<br><br>
+	<input type="text" placeholder="I will track you here..." onkeyup="
+		tracking();
+	" class="input-text">
+
+	<p class="js-tracked-text"></p>
+	<script>
+
+		//collect data
+		//display the data
+		//collect  again
+		//display the data by adding with old data
+
+		function tracking(){
+			let text = document.querySelector('.input-text');
+			document.querySelector('.js-tracked-text').innerHTML = text.value; 
+		}
+
+		function onClickEnter(){
+			if(event.key==='Enter'){
+				representName();
+			}
+		}
+
+		function representName(){
+			const name = document.querySelector('.input-box-js').value;
+			document.querySelector('.name-para-js').innerHTML = `Boom! Your name is ${name}.`;
+		}
+
+		function showElement(){
+			let a = document.querySelector('button');
+			console.log(a);
+		}
+		function changeText(){
+			let value = document.querySelector('.js-control-button');
+			if(value.innerHTML==='9b'){
+				value.innerHTML = '9b done';
+				value.classList.add('js-button-after');
+			}else{
+				 value.innerHTML = '9b';
+				 value.classList.remove('js-button-after');
+			}
+		}
+
+	</script>
+
+</body>
+</html>

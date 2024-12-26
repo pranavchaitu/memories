@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            margin: 20px auto;
+            width: 320px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000000;
+            cursor: pointer;
+            background-color: #7fff00 ;
+        }
+        .button{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .button button{
+          padding: 10px 20px;
+          font-size: larger;
+          font-family: sans-serif;
+          background-color: aqua;
+          color: black;
+          border: none;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Tic-Tac-Toe</h1>
+    <div class="board" id="board"></div>
+    <p id="message"></p>
+    <div class="button">
+      <button onclick="resetBoard()">Reset</button>
+    </div>
+
+    <script>
+        const board = document.getElementById("board");
+        const message = document.getElementById("message");
+        const cells = [];
+        let currentPlayer = "X";
+        let gameOver = false;
+
+        // Create the Tic-Tac-Toe board
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.dataset.index = i;
+            cell.addEventListener("click", handleCellClick);
+            cells.push(cell);
+            board.appendChild(cell);
+        }
+
+        // Event handler for cell click
+        function handleCellClick(event) {
+            const cell = event.target;
+            const index = cell.dataset.index;
+
+            if (cells[index].textContent || gameOver) {
+                return; // Cell already filled or game over
+            }
+
+            cells[index].textContent = currentPlayer;
+
+            if (checkWin()) {
+                gameOver = true;
+                message.textContent = `${currentPlayer} wins!`;
+            } else if (isBoardFull()) {
+                gameOver = true;
+                message.textContent = "It's a draw!";
+            } else {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+            }
+        }
+
+        // Check if there is a win
+        function checkWin() {
+            const winCombinations = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (const combination of winCombinations) {
+                const [a, b, c] = combination;
+                if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // Check if the board is full (a draw)
+        function isBoardFull() {
+            return cells.every(cell => cell.textContent);
+        }
+
+        // Reset the board
+        function resetBoard() {
+            cells.forEach(cell => {
+                cell.textContent = "";
+            });
+            currentPlayer = "X";
+            gameOver = false;
+            message.textContent = "";
+        }
+    </script>
+</body>
+</html>

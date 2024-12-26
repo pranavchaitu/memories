@@ -1,0 +1,13 @@
+	#include<stdio.h>
+	void main()
+	{
+	int p,t,r,tot,si;
+	clrscr();
+	printf("type p t r values respectively:-\n");
+	scanf("%d%d%d",&p,&t,&r);
+	tot=p+t+r;
+	si=tot/3;
+	printf("total=%d",tot);
+	printf("simple interest=%d",si);
+	getch();
+	}

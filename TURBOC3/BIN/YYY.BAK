@@ -1,0 +1,15 @@
+	#include<stdio.h>
+	void main()
+	{
+	int n,r,i;
+	clrscr();
+	printf("ENTER YOUR MULTIPLE AND RANGE\t");
+	scanf("%d%d",&n,&r);
+	i=n;
+	while(i<=r)
+	{
+	printf("\n%d*%d=%d",9,i,i*9);
+	i++;
+	}
+	getch();
+	}

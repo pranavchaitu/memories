@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>H & M SALE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .image{
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+      body{
+      font-family: Roboto,arial;
+    }
+    .main-box{
+      position: relative;
+      display: inline-block;
+      border: solid;
+      border-color: rgb(175, 175, 175);
+      border-width: 1px;
+    }
+    .discount-coupon{
+      background-color: black;
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 0px; 
+      font-size: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      position: absolute;
+
+    }
+    .white-overlay{
+      background-color: rgba(255, 255, 255,0.8);
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-style: solid ;
+      border-top-width: 1px;
+      border-top-color: rgb(255, 255, 255);
+    }
+    .button{
+      font-weight: bold;
+      font-family: roboto;
+      cursor: pointer;
+      background-color: rgb(43, 36, 36);
+      color: white;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 3px;
+      font-size: 15px;
+    }
+    .extra-code{
+      border-radius: 5px;
+      position: absolute;
+      top: 80px;
+      right: -250px;
+      background-color: white;
+      color: white;
+      opacity: 0;
+      display: flex;
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(228, 228, 228);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+      font-family: roboto;
+      background-color: black;
+      pointer-events: none;
+    }
+    .main-box:hover .extra-code{
+      opacity: 1;
+      transition: 1s;
+    }
+    .image2{
+      padding-left: 50px;
+      padding-right: 50px;
+      width: 50px;
+      object-fit: contain;
+      object-position: center;
+      margin-bottom: 6px;
+    }
+    .left-section{
+      width: 100px;
+      color: white;
+      font-size: 12px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      border-right-color:white ;
+      border-right:solid ;
+      border-right-width:1px ;
+    }
+    .right-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+    }
+    .button2{
+      width: 100px;
+      font-family: roboto;
+      font-size: 10px;
+      background-color: orange;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      border-radius: 4px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-box">
+     <a href="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F98%2Ffc%2F98fce18262de4daf0acf6415ed944442a6280a47.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/fullscreen]" target="_blank">
+       <img class="image" src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F98%2Ffc%2F98fce18262de4daf0acf6415ed944442a6280a47.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]">
+     </a>
+    <div class="discount-coupon">
+      20% OFF
+    </div>
+    <div class="white-overlay">
+      <a href="https://www2.hm.com/en_in/productpage.1080301004.html" target="_blank">
+        <button class="button">
+           Buy Now
+        </button>
+      </a>
+    </div>
+    <div class="extra-code">
+      <div class="left-section">UPTO 60% OFF ON OTHER PRODUCTS</div>
+      <div class="right-section">
+        <img src="logos/h and m logo.png" class="image2">
+        <a href="https://www2.hm.com/en_in/index.html" target="_blank">
+          <button  class="button2">VISIT WEBSITE ></button>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

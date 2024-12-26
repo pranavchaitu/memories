@@ -1,0 +1,11 @@
+	#include<stdio.h>
+	void main()
+	{
+	int sub1=13,sub2=23,sub3=33,sub4=44,tot,avg;
+	clrscr();
+	tot=sub1+sub2+sub3+sub4;
+	avg=tot/4;
+	printf("total marks=%d",tot);
+	printf("average marks=%d",avg);
+	getch();
+	}

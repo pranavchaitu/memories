@@ -1,0 +1,10 @@
+	#include<stdio.h>
+	void main()
+	{
+	int a;
+	clrscr();
+	printf("enter age here/t");
+	scanf("%d",&a);
+	(a>=18)?printf("he can vote"):("he can't vote");
+	getch();
+	}

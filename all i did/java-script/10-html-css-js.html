@@ -1,0 +1,129 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML-CSS-JS</title>
+	<style>
+		.cart-button{
+			background-color: rgb(256,216,20);
+			border: none;
+			padding: 8px 50px;
+			font-size: 18px;
+			border-radius: 30px;
+			cursor: pointer;
+		}
+		.request-button{
+			background-color: black;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		.schedule-button{
+			background-color: rgb(230, 230, 230);
+			border: none;
+			padding: 10px 27px;
+			font-weight: bold;
+			margin-left: 20px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<button class="cart-button">Add to Cart</button>
+<br><br><br>
+	<button class="request-button">Request now</button>
+	<button class="schedule-button">Schedule for later</button>
+</body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button class="js-button">Test</button>
+
+	<script>
+		let element = document.querySelector('.js-button');
+		console.log(element.classList.contains('js-button'));
+	</script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.color-change-before{
+			background-color: rgb(15, 1, 1);
+			color: white;
+			padding: 10px 15px;
+			border-radius: 10px;
+			cursor: pointer;
+			border: none;
+		}
+		.color-change-after{
+			background-color: rgb(236, 236, 236);
+			color:black;
+		}
+	</style>
+</head>
+<body>
+
+	<button onclick="
+		toggleButton('.js-button-1');
+" class="color-change-before js-button-1">
+OFF</button>
+
+	<button onclick="
+		toggleButton('.js-button-2');
+	" class="color-change-before js-button-2">
+		Music
+	</button>
+
+	<button onclick="
+		toggleButton('.js-button-3')
+	" class="color-change-before js-button-3">
+		Tech
+	</button>
+<br><br><br>
+
+<div class="js-div"></div>
+
+	<script>
+		function toggleButton(selector){
+			let element = document.querySelector(selector); 
+			if(!element.classList.contains('color-change-after')){
+				turnOffPreviousButton();
+				element.classList.add('color-change-after');
+			}else{
+				element.classList.remove('color-change-after');
+			}
+		}
+		function turnOffPreviousButton(){
+			let previousButton = document.querySelector('.color-change-after');
+			if(previousButton){
+				previousButton.classList.remove('color-change-after');
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+

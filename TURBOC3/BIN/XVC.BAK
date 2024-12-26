@@ -1,0 +1,31 @@
+	#include<graphics.h>
+	#include<stdio.h>
+	void main()
+	{
+	int gdr,gmd,x,y,i;
+	gdr=DETECT;
+	initgraph(&gdr,&gmd,"c:\\turboc3\\bgi");
+	x=getmaxx()/2;
+	y=getmaxy()/2;
+	while(!kbhit())
+	{
+	cleardevice();
+	for(i=10;i<=230;i+=4)
+	{
+	setcolor(i);
+	circle(x,y,i);
+	delay(10000);
+	sound(1000);
+	}
+	cleardevice();
+	for(i=230;i>=10;i=i-2)
+	{
+	setcolor(i);
+	circle(x,y,i);
+	delay(10000);
+	sound(1000);
+	}
+	nosound();
+	}
+	getch();
+	}

@@ -1,0 +1,27 @@
+.cat-picture {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 200px;
+  vertical-align: middle;
+}
+.text{
+  margin-left:8px;
+  border: none;
+  vertical-align: middle;
+  font-size: 12px;
+}
+.butt{
+  background-color: rgb(69, 156, 214);
+  color: white;
+  border: none;
+  margin-left: 40px;
+  border-radius: 11px;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}

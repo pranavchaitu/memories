@@ -1,0 +1,17 @@
+       /*w.a.p to perform a data*/
+	#include<stdio.h>
+	void main()
+	{
+	int a = 35;
+	float b = 1.47;
+	char c = 'K';
+	char d[12] = "SURYA SUNADH";
+
+	clrscr();
+	printf("weight=%d",a);
+	printf("\nheight=%.2f",b);                     XX
+	printf("\ninitial=%c",c);
+	printf("\nname=%s",d);
+	getch();
+	}
+

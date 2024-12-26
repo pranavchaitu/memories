@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dom projects</title>
+
+	<style>
+		body{
+			font-family: arial;
+			font-size: 16px;
+		}
+		.js-button{
+			background-color: black;
+			color: white;
+			border: none;
+			padding: 10px 15px;
+			font-weight: bold;
+			border-radius: 50px;
+			cursor: pointer;
+		}
+		.color-change-subscribe{
+			background-color: rgb(240, 240, 240);
+			color: black;
+		}
+		input{
+			padding: 10px;
+			font-size: 14px;
+		}
+		.calculate-button{
+			background-color: green;
+			color: white;
+			border: none;
+			padding:12px 18px;
+			font-size: 15px;
+		}
+
+		.css-error-msg{
+			color:red;
+		}
+	</style>
+
+</head>
+<body>
+
+	<p>YouTube Subscribe Button</p>
+
+	<button onclick="
+		changeButton();
+	" class="js-button">
+		Subscribe
+	</button>
+
+	<br>
+	<br>
+	<br>
+
+	<p>Amazon Shipping Calculator</p>
+
+	<input type="text" placeholder="Cost of order" class="js-input" onkeydown="
+		calculateOnEnter();
+		console.log(event.key);
+	">
+	<button onclick="
+		calculateTotal();
+	" class="calculate-button">
+		Calculate
+	</button>
+
+	<p class="js-price"></p>
+	<p class="js-extra-price"></p>
+	<script>
+		function calculateOnEnter(){
+			if(event.key==='Enter'){
+			calculateTotal();
+			}else if(event.key==='Backspace'){
+				document.querySelector('.js-extra-price').innerHTML ="";
+				document.querySelector('.js-price').innerHTML = "";
+			}
+		}
+
+		function changeButton(){
+			const buttonElement = document.querySelector('.js-button')
+			if(buttonElement.innerHTML==='Subscribe'){
+				buttonElement.innerHTML = 'Subscribed';
+				buttonElement.classList.add('color-change-subscribe');
+			}else{
+				buttonElement.innerHTML = 'Subscribe';
+				buttonElement.classList.remove('color-change-subscribe');
+			}
+		}
+		/*
+		function calculateTotal(){
+			const sum = document.querySelector('.js-input');
+			let html = document.querySelector('.js-price');
+			let total = Number(sum.value) * 100;
+			if(total>0&&total<4000){
+				html.classList.remove('error-msg-css');
+				total=(total + 1000);
+				document.querySelector('.js-price').innerHTML = `$${sum.value} + $10 = ${total/100}`;
+				document.querySelector('.js-extra-price').innerHTML = "extra $10 for handling fee.";
+			}
+			else if(total<0){
+				html.classList.add('error-msg-css');
+				document.querySelector('.js-price').innerHTML = 'Error: cost cannot be less than $0';
+				
+			}
+			
+			else{
+				html.classList.remove('error-msg-css');
+				document.querySelector('.js-price').innerHTML = `$${total}`;
+				document.querySelector('.js-extra-price').innerHTML ="";
+			}
+		}
+		*/
+		function calculateTotal(){
+			document.querySelector('.js-price').innerHTML = '';
+			document.querySelector('.js-extra-price').innerHTML = '';
+			let sum = document.querySelector('.js-input');
+			let value = Number(sum.value)*100;
+			var price1 = document.querySelector('.js-price');
+			var price2 = document.querySelector('.js-extra-price');
+			if(value<0){
+				price1.innerHTML = 'Error: cost cannot be less than $0';
+				price1.classList.add('css-error-msg');
+				return;
+			}
+			if(value<4000){
+				price1.classList.remove('css-error-msg');
+				value = value +1000;
+				price2.innerHTML = "extra $10 for handling fee."
+			}
+			price1.classList.remove('css-error-msg');
+			price1.innerHTML = `$${value/100}`;
+		}
+	</script>
+</body>
+</html>

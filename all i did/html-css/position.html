@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Position</title>
+  <style>
+    .side-bar{
+      position: fixed;
+      right: 0px;
+      bottom: 0px;
+      top: 0px;
+      width: 90px;
+      background-color: black;
+      color:white;
+    }
+    .overlay{
+      position: fixed;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal{
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      height: 110px;
+      width: 285px;
+      border-radius: 5px;
+      align-items: start;
+      justify-content: center;
+      padding-left: 15px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body style="height: 3000px;font-family: arial;">
+  <div class="side-bar">right side bar</div>
+  <div>
+    static content is here
+  </div>
+  <div class="overlay">
+    <div class="modal">
+      <div style="
+        font-weight: bold;
+        font-size: 25px
+        ;">
+        I'm Pranav
+      </div>
+      <div style="font-size: 14px;
+      font-weight: 600;">CSE-'C'</div>
+      <button>EXIT</button>
+    </div>
+  </div>
+</body>
+</html>

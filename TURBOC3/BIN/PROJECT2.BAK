@@ -1,0 +1,17 @@
+	/*w.a.p to print the data types*/
+	#include<stdio.h>
+	void main()
+	{
+	int a = 12;
+	float b = 2.2345;
+	char c = 'r';
+	char d[15] = "REPURI";
+	clrscr();
+	printf("integer value = %d",a);
+	printf("\nfloat value = %.4f",b);
+	printf("\ncharacter = %c",c);
+	printf("\nstring = %s",d);
+	getch();
+	}
+
+

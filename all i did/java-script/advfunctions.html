@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=
+	, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		button{
+			color: white;
+			background-color: black;
+			padding: 10px 20px;
+			font-size: larger;
+			border-radius: 25px;
+		}
+		
+		p{
+			font-family: arial;
+			font-size: larger;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<button class="js-button">Finish</button>
+	<br><br>
+	<button class="js-add-button">Add To Cart</button>
+	<p class="js-cart-status"></p>
+	<script>
+		/*
+		function updateButton(){
+			setTimeout(()=>{
+				document.querySelector('.js-button').innerHTML = 'Finished!';
+			},1000);
+		}
+		*/
+
+		let button = document.querySelector('.js-button');
+		
+		button.addEventListener('click',() => {
+			button.innerHTML = 'Loading...'
+			setTimeout(()=>{
+				button.innerHTML = 'Finished!'
+			},1000);
+		})
+
+		let button2 = document.querySelector('.js-add-button');
+		let data = document.querySelector('.js-cart-status')
+		button2.addEventListener('click',() => {
+			data.innerHTML = 'Added!'
+			setTimeout(()=>{
+				data.innerHTML = ''
+			},2000);
+		})
+
+	 

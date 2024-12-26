@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>cats</title>
+  <style>
+    .img{
+      width: 50px;
+      border-radius: 25px;
+      margin-bottom:8px ;
+    }
+    .left-section{
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      padding-left: 10px;
+      padding-top: 15px;
+      padding-right: 10px;
+    }
+    .main-flexbox{
+      display: flex;
+      flex-direction: row;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+    }
+    .right-section{
+      background-color: rgb(37, 37, 37);
+      padding-top: 10px;
+      padding-left: 10px;
+      line-height: 32px;
+      width: 165px;
+    }
+  </style>
+</head>
+
+<body style="color: gray;
+             font-family: arial;
+             font-size: 15px;
+             height: 2000px;
+             padding-left:300px ;">
+  <div style="text-decoration: underline;">what you see here is static</div>
+  <div style="font-weight: 700;margin-top: 1000px;"><--and this is fixed position </div>
+  <div class="main-flexbox">
+    <div class="left-section">
+      <img class="img" src="https://i.pinimg.com/originals/7a/e8/9e/7ae89e0300f6696b2e575e96d1713db6.jpg">
+      <img class="img" src="https://i.pinimg.com/originals/7a/e8/9e/7ae89e0300f6696b2e575e96d1713db6.jpg">
+      <img class="img" src="https://i.pinimg.com/originals/7a/e8/9e/7ae89e0300f6696b2e575e96d1713db6.jpg">
+    </div>
+    <div class="right-section">
+      <div style="display: inline-block;
+                  margin-right: 90px;
+                  font-weight: bold;
+                  color:white;
+                  font-size: 12px;">INFO</div>
+      <div style="display: inline-block;
+                  font-size: 23px;
+                  ">+</div>
+      <div># new-videos</div>
+      <div># updates</div>
+      <div># faq</div>
+    </div>
+  </div>
+</body>
+</html>
